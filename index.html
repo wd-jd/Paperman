@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Game Portfolio</title>
+    <style>
+        /* CSS Variables: Change these to change the whole site's look! */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8; /* Blue accent */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        h1 { color: var(--accent-color); margin-bottom: 10px; }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #334155;
+            transition: transform 0.2s, border-color 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .game-card h3 { margin-top: 0; color: var(--accent-color); }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer { margin-top: 50px; opacity: 0.6; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Game Collection</h1>
+        <p>Welcome! I'm a developer building small interactive experiences. Check out my projects below.</p>
+    </header>
+
+    <div class="game-grid">
+
+        <div class="game-card">
+            <h3>Game Title 1</h3>
+            <p>A short, punchy description of what this game is about. Example: A retro-style platformer built in JavaScript.</p>
+            <a href="YOUR_GITHUB_GAME_LINK_HERE" class="btn">Play Now</a>
+        </div>
+        <div class="game-card">
+            <h3>Game Title 2</h3>
+            <p>Another awesome game project. High scores and global leaderboards included!</p>
+            <a href="#" class="btn">Play Now</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Name | Built with GitHub Pages</p>
+    </footer>
+
+</body>
+</html>
