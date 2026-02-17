@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Game Portfolio</title>
     <style>
-        /* CSS Variables: Change these to change the whole site's look! */
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
             --text-color: #f8fafc;
-            --accent-color: #38bdf8; /* Blue accent */
+            --accent-color: #38bdf8;
+        }
+
+        /* HIDE CONTENT BY DEFAULT */
+        #protected-content {
+            display: none;
         }
 
         body {
@@ -22,14 +26,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-
+        header { text-align: center; margin-bottom: 40px; max-width: 600px; }
         h1 { color: var(--accent-color); margin-bottom: 10px; }
 
         .game-grid {
@@ -73,29 +73,50 @@
 </head>
 <body>
 
-    <header>
-        <h1>6767676767676767</h1>
-        <p>Try one of my games!!!</p>
-    </header>
+    <div id="protected-content">
+        <header>
+            <h1>6767676767676767</h1>
+            <p>Try one of my games!!!</p>
+        </header>
 
-    <div class="game-grid">
-
-        <div class="game-card">
-            <h3>Jumpin square</h3>
-            <p>USe arrow _ keys and donT get_hit by red square _collect coins</p>
-            <a href="https://wd-jd.github.io/The-Jumping-square/" class="btn">Play Now</a>
+        <div class="game-grid">
+            <div class="game-card">
+                <h3>Jumpin square</h3>
+                <p>USe arrow _ keys and donT get_hit by red square _collect coins</p>
+                <a href="https://wd-jd.github.io/The-Jumping-square/" class="btn">Play Now</a>
+            </div>
+            <div class="game-card">
+                <h3>toy spinner</h3>
+                <p>My toy spinner</p>
+                <a href="https://wd-jd.github.io/top_picker/" class="btn">Play Now</a>
+            </div>
         </div>
-        <div class="game-card">
-            <h3>toy spinner</h3>
-            <p>My toy spinner</p>
-            <a href="https://wd-jd.github.io/top_picker/" class="btn">Play Now</a>
-        </div>
 
+        <footer>
+            <p>&copy; SUp_sup****0_0</p>
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; SUp_sup****0_0</p>
-    </footer>
+    <script>
+        // Set your password here
+        const PASSWORD = "6767"; 
+        
+        function checkPassword() {
+            const entry = prompt("Enter the secret password to view the games:");
+            
+            if (entry === PASSWORD) {
+                // If correct, show the content
+                document.getElementById('protected-content').style.display = 'block';
+            } else {
+                // If wrong, tell them and refresh/redirect
+                alert("Incorrect password. Access denied.");
+                window.location.reload(); 
+            }
+        }
+
+        // Run the function as soon as the page loads
+        window.onload = checkPassword;
+    </script>
 
 </body>
 </html>
